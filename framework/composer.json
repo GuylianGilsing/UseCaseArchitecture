@@ -1,0 +1,44 @@
+{
+    "name": "framework/api",
+    "description": "A collection of classes, functions, interfaces, and traits that aid with creating APIs.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Guylian Gilsing",
+            "email": "gilsingguylian@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Framework\\": "./src"
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "psr/http-message": "^1.0",
+        "psr/container": "^2.0",
+        "slim/slim": "^4.12",
+        "slim/psr7": "^1.6"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "nunomaduro/phpinsights": "^2.11",
+        "pestphp/pest": "^2.26",
+        "mockery/mockery": "^1.6"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "scripts": {
+        "lint": "./vendor/bin/phpinsights analyse -v",
+        "lint:fix": "./vendor/bin/phpinsights analyse --fix",
+        "tests": "./vendor/bin/pest",
+        "tests:unit": "./vendor/bin/pest --testsuite unit",
+        "tests:feature": "./vendor/bin/pest --testsuite feature",
+        "tests:coverage": "./vendor/bin/pest --coverage-html ./coverage"
+    }
+}

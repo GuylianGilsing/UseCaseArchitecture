@@ -1,0 +1,7 @@
+# Files
+*.bak
+
+# Folders
+coverage/
+logs/
+vendor/
